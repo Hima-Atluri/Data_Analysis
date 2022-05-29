@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <style>
+        img{
+            width: 250px;
+            height: 200px;
+        }
+        p{
+            text-align: center;
+            color: #fdfdfe;
+            font-size: 20px;
+            font-family: 'Times New Roman';
+            
+        }
+        
+        
+    </style>
+    <body >
+        <br><br>
+        <center>
+        <p>
+            Successful businesses run on insight. They are passionate about analytics and able to translate data into 
+            intelligence that fuel decision making. To stay competitive, automotive manufacturers need to gather and 
+            analyze high-volume data sets. We can help businesses by applying analytical and machine learning 
+            processes that drives greater profitability, market share and decision making. We also incorporated
+            various visualization techniques that allows management to gain insights and recognize new patterns.
+        </p>
+        <br><br><br>
+        <div class="quote">
+        <p> <font face="Monotype Corsiva" size="7">If you're looking for business analytics, you are in the right place!</font></p>
+        </center></div>
+        
+        <br><br>
+        <p> &emsp; &emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </p>
+        <a href="{% url 'dv' %}">
+            <img src="{% static 'data.jpg' %}" alt="dv" >
+        </a>
+        
+        <p> &emsp; &emsp;&emsp;&emsp; </p>
+        <a href="{% url 'predict' %}">
+            <img src="{% static 'price.jpg' %}" alt="predict" >
+        </a>
+        <p> &emsp; &emsp;&emsp;&emsp;</p>
+        <a href="{% url 'sales' %}">
+            <img src="{% static 'sales.png' %}" alt="sales" >
+        </a>
+
+    </body>
+{% endblock content %}

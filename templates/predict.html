@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <style>
+        p{
+            color: #fdfdfe;
+            font-size: 20px;
+        }
+        dialog{
+            font-weight: bolder;
+        }
+    </style>
+    <center><p class="subheader">Predicting average market price for a given specification-</p>
+    <p>Gives insights for fixing price for a new car</p></center>
+    <br><br>
+    <script>
+        function validateForm(){
+            var form = document.getElementById("myForm").elements;
+            for(var i = 0; i < form.length; i++){
+                if(form[i].type == 'text'){
+                    //document.write(form[i].name + ": " + form[i].value);
+                    if(!Number.isInteger(parseFloat(form[i].value))){
+                    alert("Enter only integer values");
+                    return false;
+              }
+            }
+           
+                //if(!Number.isInteger(parseFloat(element[i].value))){
+               // alert(elem[i].value);
+            //return false;
+                }
+        }
+            
+            
+
+        
+    </script>
+    <form id="myForm" action="{% url 'result' %}" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td><p>Displacement</p></td>
+                <td><input type="text" name="Displacement" required></td>
+            </tr>
+        
+            <tr>
+                <td><p>Cylinders</p></td>
+                <td><input type="text" name="Cylinders" required></td>
+            </tr>
+        
+            <tr>
+                <td><p>Fuel_Capacity</p></td>
+                <td><input type="text" name="Fuel_Capacity" required></td>
+            </tr>
+            <tr>
+                <td><p>Doors</p></td>
+                <td><input type="text" name="Doors" required></td>
+            </tr>
+        
+            <tr>
+                <td><p>Mileage</p></td>
+                <td><input type="text" name="Mileage" required></td>
+            </tr>
+            
+            <tr>
+                <td><p>ARAI_Mileage</p></td>
+                <td><input type="text" name="ARAI_Mileage" required></td>
+            </tr>
+            
+            <tr>
+                <td><p>kerb_weight</p></td>
+                <td><input type="text" name="kerb_weight" required></td>
+            </tr>
+        
+            <tr>
+                <td><p>Seating</p></td>
+                <td><input type="text" name="Seating" required></td>
+            </tr>
+            
+            <tr>
+                <td><p>Gears</p></td>
+                <td><input type="text" name="Gears" required></td>
+            </tr>
+            
+            <tr>
+                <td><p>Power</p></td>
+                <td><input type="text" name="Power" required></td>
+            </tr>
+        
+            <tr>
+                <td><p>Torque</p></td>
+                <td><input type="text" name="Torque" required></td>
+            </tr>
+            
+        </table>
+        <br>
+        <center><input type="submit" value='Get Approximate Market Price' ></center>
+
+    </form>  
+
+    {% if result %}  
+        <dialog open>The average market price of the car for this specification is : Rs. {{result.0}}</dialog>
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    .container1{
+        display:flex;
+        align-items: center;
+        color: #fdfdfe;
+    }
+    .container1 img{
+        width: 500px;
+        margin-right: 50px;
+        height: 400px;
+    }
+    .container2{
+        display:flex;
+        align-items: center;
+        color: #fdfdfe;
+    }
+    .container2 img{
+        width: 750px;
+        margin-right: 50px;
+        height: 710px;
+    }
+    p{
+        color: #fdfdfe;
+        font-size: 15px;
+    }
+    
+</style>
+<center>
+    <p class="subheader">Sales Data Analytics </p><br>
+    <p>(data from 2007-2016)</p>
+</center>
+    <hr><br>
+    <div class="container1">
+        <img src="{% static 'sales3.png' %}",alt="not displayed"/> 
+        <center>
+        <p class="subheader">When to launch a new car?<br><br>
+            From the plot, it is evident that the sales during the months of March, April and 
+                January are high. Hence, these are the right months to launch a new car.
+        
+        </p></center>
+    </div>
+    <br>
+    <div class="container2">
+        <img src="{% static 'sales1.png' %}",alt="not displayed" class="size"/><br><br><br>
+        <center>
+        <p class="subheader">Competitors in the market<br><br>
+            From the pie chart, we can see that the major competetion is from Toyota company.
+        
+        </p></center>
+    </div>
+    
+{% endblock content %}
