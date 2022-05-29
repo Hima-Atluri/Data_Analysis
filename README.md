@@ -38,7 +38,7 @@ It helps the industrialists to take informed decisions.
 
   `& /.../.../.venv/Scripts/Activate.ps1`
   
-* Clone the project from master branch in the repository and open the folder in VSCode
+* Clone the project from the repository and open the folder in VSCode
 * Run the server
 
   `python manage.py runserver`
